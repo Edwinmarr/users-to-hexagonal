@@ -1,7 +1,7 @@
 package com.edwinmarrugo.userstohexagonal.application.mapper;
 
-import com.edwinmarrugo.userstohexagonal.application.dto.UserResponse;
 import com.edwinmarrugo.userstohexagonal.application.dto.UserRequest;
+import com.edwinmarrugo.userstohexagonal.application.dto.UserResponse;
 import com.edwinmarrugo.userstohexagonal.domain.model.User;
 
 public class ApplicationMapper {

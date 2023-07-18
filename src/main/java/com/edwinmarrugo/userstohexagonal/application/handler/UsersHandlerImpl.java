@@ -1,7 +1,7 @@
 package com.edwinmarrugo.userstohexagonal.application.handler;
 
-import com.edwinmarrugo.userstohexagonal.application.dto.UserResponse;
 import com.edwinmarrugo.userstohexagonal.application.dto.UserRequest;
+import com.edwinmarrugo.userstohexagonal.application.dto.UserResponse;
 import com.edwinmarrugo.userstohexagonal.application.mapper.ApplicationMapper;
 import com.edwinmarrugo.userstohexagonal.domain.api.UserServicePort;
 import com.edwinmarrugo.userstohexagonal.domain.model.User;
@@ -27,9 +27,5 @@ public class UsersHandlerImpl implements UsersHandler{
         return ApplicationMapper.toUserResponse(user);
     }
 
-    @Override
-    public String getHelloWorld() {
-        return userServicePort.getHelloWorld();
-    }
 
 }

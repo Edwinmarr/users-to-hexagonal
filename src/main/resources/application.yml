@@ -15,6 +15,3 @@ spring:
     hibernate:
       ddl-auto: validate
       format_sql: true
-
-external-api:
-  url: ${HELLO_WORLD_URL:localhost:8085}

@@ -1,7 +1,5 @@
 package com.edwinmarrugo.userstohexagonal.domain.model;
 
-import java.util.List;
-
 public class User {
     private String typeId;
     private String numberId;
