@@ -18,14 +18,6 @@ jobs:
   - task: Gradle@3
     inputs:
       gradleWrapperFile: 'gradlew'
-      tasks: 'build'
-      publishJUnitResults: false
-      javaHomeOption: 'JDKVersion'
-      sonarQubeRunAnalysis: false
-      spotBugsAnalysis: false
-  - task: Gradle@3
-    inputs:
-      gradleWrapperFile: 'gradlew'
       tasks: 'tests'
       publishJUnitResults: true
       testResultsFiles: '**/TEST-*.xml'
@@ -33,6 +25,5 @@ jobs:
       codeCoverageToolOption: 'JaCoCo'
       codeCoverageClassFilesDirectories: 'build/classes/main/'
       javaHomeOption: 'JDKVersion'
-      jdkVersionOption: '1.17'
       sonarQubeRunAnalysis: false
       spotBugsAnalysis: false
