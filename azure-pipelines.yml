@@ -9,7 +9,11 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
+jobs:
+- job:
+  container: 'gradle:jdk17'
+
+  steps:
   - task: Gradle@3
     inputs:
       gradleWrapperFile: 'gradlew'
