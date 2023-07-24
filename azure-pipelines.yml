@@ -1,4 +1,5 @@
 # Gradle
+
 # Build your Java project and run tests with Gradle using a Gradle wrapper script.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
@@ -20,5 +21,18 @@ jobs:
       tasks: 'build'
       publishJUnitResults: false
       javaHomeOption: 'JDKVersion'
+      sonarQubeRunAnalysis: false
+      spotBugsAnalysis: false
+  - task: Gradle@3
+    inputs:
+      gradleWrapperFile: 'gradlew'
+      tasks: 'tests'
+      publishJUnitResults: true
+      testResultsFiles: '**/TEST-*.xml'
+      testRunTitle: 'Test run'
+      codeCoverageToolOption: 'JaCoCo'
+      codeCoverageClassFilesDirectories: 'build/classes/main/'
+      javaHomeOption: 'JDKVersion'
+      jdkVersionOption: '1.17'
       sonarQubeRunAnalysis: false
       spotBugsAnalysis: false
