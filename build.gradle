@@ -37,22 +37,14 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-test{
-	jacoco {
-		// Habilitar la generación del informe de cobertura
-		enabled = true
-	}
-	finalizedBy jacocoTestReport
-}
-
-
 jacocoTestReport {
 	reports {
-		xml.required = false
-		csv.required = false
-		html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+		xml.required = true
 	}
-	dependsOn test // tests are required to run before generating the report
+}
+
+test{
+	finalizedBy jacocoTestReport
 }
 
 
