@@ -18,6 +18,8 @@ steps:
       gradleWrapperFile: 'gradlew'
       tasks: 'clean build'
       jdkVersionOption: 1.17
+      sonarQubeRunAnalysis: true
+      sonarQubeGradlePluginVersion: 4.2.1.3168
   - task: SonarCloudPrepare@1
     inputs:
       SonarCloud: 'Sonar cloud connection'
