@@ -38,6 +38,10 @@ tasks.named('test') {
 }
 
 test{
+	jacoco {
+		// Habilitar la generación del informe de cobertura
+		enabled = true
+	}
 	finalizedBy jacocoTestReport
 }
 
