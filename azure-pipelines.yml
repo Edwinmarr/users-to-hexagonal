@@ -32,11 +32,7 @@ steps:
       jdkVersionOption: 1.17
       sonarQubeRunAnalysis: true
       sonarQubeGradlePluginVersion: 4.3.0.3225
-  
-  - task: Gradle@3
-    displayName: 'Ejecutar tests gradle'
-    inputs:
-      tasks: 'test'
+      codeCoverageGradle5xOrHigher: true
   - task: SonarCloudAnalyze@1
     inputs:
       jdkversion: 'JAVA_HOME_17_X64'
