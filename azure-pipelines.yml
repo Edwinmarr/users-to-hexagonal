@@ -11,7 +11,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-  - task: Gradle@2
+  - task: Gradle@3
     inputs:
       gradleWrapperFile: 'gradlew'
       tasks: 'clean build'
@@ -19,7 +19,7 @@ steps:
       sonarQubeRunAnalysis: true
       sonarQubeGradlePluginVersion: 4.3.0.3225
   
-  - task: Gradle@2
+  - task: Gradle@3
     inputs:
       tasks: 'test'
 
