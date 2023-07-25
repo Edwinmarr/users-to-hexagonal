@@ -38,14 +38,21 @@ tasks.named('test') {
 }
 
 test{
+	jacoco {
+		// Habilitar la generación del informe de cobertura
+		enabled = true
+	}
 	finalizedBy jacocoTestReport
 }
 
 
 jacocoTestReport {
-	dependsOn test // tests are required to run before generating the report
 	reports {
-		xml.enabled true
+		xml.required = false
+		csv.required = false
+		html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
 	}
+	dependsOn test // tests are required to run before generating the report
 }
+
 
