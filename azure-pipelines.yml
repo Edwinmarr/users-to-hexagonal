@@ -13,7 +13,6 @@ pool:
 steps:
   - checkout: self
     fetchDepth: 0
-
   - task: SonarCloudPrepare@1
     inputs:
       SonarCloud: 'Sonar'
@@ -26,12 +25,14 @@ steps:
         sonar.projectKey=edwinmarr_bootcamp-devops
         sonar.projectName=bootcamp-devops
   - task: Gradle@3
+    displayName: 'Ejecutar tareas gradle'
     inputs:
       gradleWrapperFile: 'gradlew'
       tasks: 'clean build'
       jdkVersionOption: 1.17
       sonarQubeRunAnalysis: true
       sonarQubeGradlePluginVersion: 4.3.0.3225
+      codeCoverageGradle5xOrHigher: true
   - task: SonarCloudAnalyze@1
     inputs:
       jdkversion: 'JAVA_HOME_17_X64'
