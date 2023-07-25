@@ -18,12 +18,12 @@ jobs:
   - task: Gradle@3
     inputs:
       gradleWrapperFile: 'gradlew'
-      tasks: 'tests'
+      tasks: 'build'
       publishJUnitResults: true
       testResultsFiles: '**/TEST-*.xml'
-      testRunTitle: 'Test run'
       codeCoverageToolOption: 'JaCoCo'
-      codeCoverageClassFilesDirectories: 'build\test-results\test'
+      codeCoverageClassFilesDirectories: 'build\classes\java\main'
+      codeCoverageGradle5xOrHigher: true
       javaHomeOption: 'JDKVersion'
       sonarQubeRunAnalysis: false
       spotBugsAnalysis: false
