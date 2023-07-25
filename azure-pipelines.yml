@@ -32,7 +32,12 @@ steps:
       jdkVersionOption: 1.17
       sonarQubeRunAnalysis: true
       sonarQubeGradlePluginVersion: 4.3.0.3225
-      codeCoverageToolOption: JaCoCo
+  - task: SonarCloudAnalyze@1
+    inputs:
+      jdkversion: 'JAVA_HOME_17_X64'
+  - task: SonarCloudPublish@1
+    inputs:
+      pollingTimeoutSec: '300'
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)'
