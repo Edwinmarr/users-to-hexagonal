@@ -10,20 +10,17 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-jobs:
-- job:
-  container: 'gradle:jdk17'
-
-  steps:
+steps:
   - task: Gradle@3
     inputs:
       gradleWrapperFile: 'gradlew'
-      tasks: 'build'
-      publishJUnitResults: true
-      testResultsFiles: '**/TEST-*.xml'
-      codeCoverageToolOption: 'JaCoCo'
-      codeCoverageClassFilesDirectories: 'build\classes\java\main'
-      codeCoverageGradle5xOrHigher: true
-      javaHomeOption: 'JDKVersion'
-      sonarQubeRunAnalysis: false
-      spotBugsAnalysis: false
+      workingDirectory: '$(Agent.BuildDirectory)'
+      tasks: 'clean build'
+      jdkVersionOption: 1.17
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'users-to-hexagonal-artifact'
+      publishLocation: 'Container'
+      MaxArtifactSize: 0
+
