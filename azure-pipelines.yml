@@ -32,6 +32,7 @@ steps:
       jdkVersionOption: 1.17
       sonarQubeRunAnalysis: true
       sonarQubeGradlePluginVersion: 4.3.0.3225
+      codeCoverageToolOption: JaCoCo
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)'
