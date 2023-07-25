@@ -20,7 +20,7 @@ jobs:
       gradleWrapperFile: 'gradlew'
       tasks: 'build'
       publishJUnitResults: true
-      testResultsFiles: '**/TEST-*.xml'
+      testResultsFiles: '**\TEST-*.xml'
       codeCoverageToolOption: 'JaCoCo'
       codeCoverageClassFilesDirectories: 'build\classes\java\main'
       codeCoverageGradle5xOrHigher: true
