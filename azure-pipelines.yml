@@ -23,7 +23,7 @@ jobs:
       testResultsFiles: '**/TEST-*.xml'
       testRunTitle: 'Test run'
       codeCoverageToolOption: 'JaCoCo'
-      codeCoverageClassFilesDirectories: 'build/classes/main/'
+      codeCoverageClassFilesDirectories: 'build\test-results\test'
       javaHomeOption: 'JDKVersion'
       sonarQubeRunAnalysis: false
       spotBugsAnalysis: false
