@@ -13,7 +13,7 @@ pool:
 steps:
   - task: Gradle@3
     inputs:
-      gradleWrapperFile: 'users-to-hexagonal/gradlew'
+      gradleWrapperFile: 'gradlew'
       workingDirectory: 'users-to-hexagonal'
       tasks: 'clean build'
       jdkVersionOption: 1.17
