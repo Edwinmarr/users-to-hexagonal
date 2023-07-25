@@ -17,6 +17,7 @@ steps:
       workingDirectory: '$(Agent.BuildDirectory)'
       tasks: 'clean build'
       jdkVersionOption: 1.17
+      publishJUnitResults: false
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)'
