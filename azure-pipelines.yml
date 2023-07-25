@@ -15,6 +15,7 @@ steps:
     inputs:
       gradleWrapperFile: 'gradlew'
       tasks: 'clean build'
+      jdkVersionOption: 1.17
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)'
