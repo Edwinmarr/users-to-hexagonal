@@ -22,19 +22,15 @@ steps:
       sonarQubeGradlePluginVersion: 4.3.0.3225
   - task: SonarCloudPrepare@1
     inputs:
-      SonarCloud: 'Sonar cloud connection'
+      SonarCloud: 'Sonar'
       organization: 'bootcamp-devops-sonar'
       scannerMode: 'Other'
-      extraProperties: 
+      extraProperties: |
+        # Additional properties that will be passed to the scanner,
+        # Put one key=value per line, example:
+        # sonar.exclusions=**/*.bin
         sonar.projectKey=edwinmarr_bootcamp-devops
         sonar.projectName=bootcamp-devops
-  - task: SonarCloudAnalyze@1
-    inputs:
-      jdkversion: 'JAVA_HOME_17_X64'
-
-  - task: SonarCloudPublish@1
-    inputs:
-      pollingTimeoutSec: '300'
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)'
