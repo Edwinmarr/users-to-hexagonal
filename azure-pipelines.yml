@@ -10,19 +10,14 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-jobs:
-  - job: 
-    container: 'gradle:jdk17'
-
-    steps:
-      - task: Gradle@3
-        inputs:
-          gradleWrapperFile: 'gradlew'
-          tasks: 'clean build'
-      - task: PublishBuildArtifacts@1
-        inputs:
-          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-          ArtifactName: 'users-to-hexagonal-artifact'
-          publishLocation: 'Container'
-          MaxArtifactSize: 0
-
+steps:
+  - task: Gradle@3
+    inputs:
+      gradleWrapperFile: 'gradlew'
+      tasks: 'clean build'
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'users-to-hexagonal-artifact'
+      publishLocation: 'Container'
+      MaxArtifactSize: 0
