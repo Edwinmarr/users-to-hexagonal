@@ -14,7 +14,7 @@ steps:
   - task: Gradle@3
     inputs:
       gradleWrapperFile: 'gradlew'
-      workingDirectory: 'users-to-hexagonal'
+      workingDirectory: '${Agent.BuildDirectory}'
       tasks: 'clean build'
       jdkVersionOption: 1.17
   - task: PublishBuildArtifacts@1
