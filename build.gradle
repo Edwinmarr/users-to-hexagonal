@@ -3,6 +3,7 @@ plugins {
 	id 'org.springframework.boot' version '3.1.2'
 	id 'io.spring.dependency-management' version '1.1.0'
 	id 'jacoco'
+	id 'org.sonarqube' version '4.3.0.3225'
 }
 
 group = 'com.edwinmarrugo'
@@ -44,4 +45,16 @@ test{
 jacocoTestReport {
 	dependsOn test // tests are required to run before generating the report
 }
+
+sonar {
+	properties {
+		property "sonar.projectKey", "edwinmarr_bootcamp-devops"
+		property "sonar.organization", "bootcamp-devops-sonar"
+		property "sonar.host.url", "https://sonarcloud.io"
+		property "sonar.sourceEncoding", "UTF-8"
+	}
+}
+
+project.tasks["sonar"].dependsOn "jacocoTestReport"
+
 
