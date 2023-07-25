@@ -11,14 +11,31 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+  - checkout: self
+    fetchDepth: 0
   - task: Gradle@3
     inputs:
       gradleWrapperFile: 'gradlew'
       tasks: 'clean build'
       jdkVersionOption: 1.17
+      sonarQubeRunAnalysis: true
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)'
       ArtifactName: 'users-to-hexagonal-artifact'
       publishLocation: 'Container'
       MaxArtifactSize: 0
+  - task: SonarCloudPrepare@1
+    inputs:
+      SonarCloud: 'Sonar cloud connection'
+      organization: 'bootcamp-devops-sonar'
+      scannerMode: 'Other'
+      extraProperties: 
+        sonar.projectKey=edwinmarr_bootcamp-devops
+        sonar.projectName=bootcamp-devops
+  - task: SonarCloudPublish@1
+    inputs:
+      pollingTimeoutSec: '300'
+  - task: SonarCloudAnalyze@1
+    inputs:
+      jdkversion: 'JAVA_HOME_17_X64'
