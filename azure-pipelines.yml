@@ -11,6 +11,18 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+  - task: Gradle@2
+    inputs:
+      gradleWrapperFile: 'gradlew'
+      tasks: 'clean build'
+      jdkVersionOption: 1.17
+      sonarQubeRunAnalysis: true
+      sonarQubeGradlePluginVersion: 4.3.0.3225
+  
+  - task: Gradle@2
+    inputs:
+      tasks: 'test'
+
   - checkout: self
     fetchDepth: 0
 
@@ -25,13 +37,6 @@ steps:
         # sonar.exclusions=**/*.bin
         sonar.projectKey=edwinmarr_bootcamp-devops
         sonar.projectName=bootcamp-devops
-  - task: Gradle@3
-    inputs:
-      gradleWrapperFile: 'gradlew'
-      tasks: 'clean build'
-      jdkVersionOption: 1.17
-      sonarQubeRunAnalysis: true
-      sonarQubeGradlePluginVersion: 4.3.0.3225
   - task: SonarCloudAnalyze@1
     inputs:
       jdkversion: 'JAVA_HOME_17_X64'
