@@ -18,7 +18,6 @@ jobs:
       - task: Gradle@3
         inputs:
           gradleWrapperFile: 'gradlew'
-          workingDirectory: '$(Agent.BuildDirectory)'
           tasks: 'clean build'
           publishJUnitResults: false
       - task: PublishBuildArtifacts@1
