@@ -15,6 +15,7 @@ steps:
   - checkout: self
     fetchDepth: 0
   - task: SonarCloudPrepare@1
+    displayName: "Preparing sonar cloud"
     inputs:
       SonarCloud: 'Sonar'
       organization: 'bootcamp-devops-sonar'
@@ -23,21 +24,18 @@ steps:
         sonar.projectKey=edwinmarr_bootcamp-devops
         sonar.projectName=bootcamp-devops
   - task: Gradle@3
-    displayName: 'Ejecutar tareas gradle'
+    displayName: 'Building gradle project'
     inputs:
       gradleWrapperFile: 'gradlew'
-      tasks: 'clean build'
+      tasks: 'clean build sonar'
       jdkVersionOption: 1.17
-      sonarQubeRunAnalysis: true
-      sonarQubeGradlePluginVersion: 4.3.0.3225
-      codeCoverageGradle5xOrHigher: true
-  - task: SonarCloudAnalyze@1
-    inputs:
-      jdkversion: 'JAVA_HOME_17_X64'
+      
   - task: SonarCloudPublish@1
+    displayName: 'Publishing sonarResults'
     inputs:
       pollingTimeoutSec: '300'
   - task: PublishBuildArtifacts@1
+    displayName: 'Publishing artifact'
     inputs:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)'
       ArtifactName: 'users-to-hexagonal-artifact'
