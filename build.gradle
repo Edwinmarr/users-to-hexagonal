@@ -57,6 +57,5 @@ sonar{
 		property "sonar.exclusions", "src/main/java/com/edwinmarrugo/userstohexagonal/infrastructure/configuration/*"
 		property "sonar.exclusions", "src/main/java/com/edwinmarrugo/userstohexagonal/infrastructure/output/jpa/entity/*"
 		property "sonar.exclusions", "src/main/java/com/edwinmarrugo/userstohexagonal/infrastructure/springbootapp/*"
-		property "sonar.exclusions", "src/main/java/com/edwinmarrugo/userstohexagonal/infrastructure/springbootapp/*"
 	}
 }
