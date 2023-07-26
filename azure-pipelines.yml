@@ -32,11 +32,6 @@ steps:
     inputs:
       pollingTimeoutSec: '300'
 
-  - task: sonarcloud-buildbreaker@2
-    inputs:
-      SonarCloud: 'Sonar'
-      organization: 'bootcamp-devops-sonar'
-
   - task: PublishBuildArtifacts@1
     displayName: 'Publishing artifact'
     inputs:
