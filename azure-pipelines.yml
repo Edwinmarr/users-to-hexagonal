@@ -26,8 +26,6 @@ steps:
       gradleWrapperFile: 'gradlew'
       tasks: 'clean build'
       jdkVersionOption: 1.17
-      sonarQubeRunAnalysis: true
-      sonarQubeGradlePluginVersion: '4.3.0.3225'
       
   - task: SonarCloudPublish@1
     displayName: 'Publishing sonarResults'
