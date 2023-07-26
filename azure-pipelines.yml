@@ -32,6 +32,12 @@ steps:
     inputs:
       pollingTimeoutSec: '300'
 
+  - task: Docker@2
+    inputs:
+      containerRegistry: 'Docker-hub'
+      repository: 'edwinmarr21/users-to-hexagonal'
+      command: 'buildAndPush'
+      Dockerfile: '**/Dockerfile'
   - task: PublishBuildArtifacts@1
     displayName: 'Publishing artifact'
     inputs:
