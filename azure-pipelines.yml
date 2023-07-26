@@ -29,11 +29,6 @@ steps:
       gradleWrapperFile: 'gradlew'
       tasks: 'clean build'
       jdkVersionOption: 1.17
-  - task: Gradle@3
-    displayName: 'Running tests'
-    inputs:
-      gradleWrapperFile: 'gradlew'
-      tasks: 'test'
     
   - task: Gradle@3
     displayName: 'Running sonar'
