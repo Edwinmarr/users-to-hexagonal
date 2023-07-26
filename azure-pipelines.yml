@@ -31,6 +31,10 @@ steps:
     displayName: 'Publishing sonarResults'
     inputs:
       pollingTimeoutSec: '300'
+
+  - task: SonarCloudQualityGateCheck@1
+    displayName: 'SonarCloud Quality Gate'
+
   - task: PublishBuildArtifacts@1
     displayName: 'Publishing artifact'
     inputs:

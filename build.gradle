@@ -54,6 +54,6 @@ sonar{
 		property "sonar.projectKey", "edwinmarr_bootcamp-devops" // Clave única de tu proyecto en SonarCloud
 		property "sonar.organization", "bootcamp-devops-sonar" // Nombre de la organización de SonarCloud
 		property "sonar.projectName", "bootcamp-devops"
-		property "sonar.exclusions", "src/main/java/com/edwinmarrugo/userstohexagonal/infrastructure/**/*"
+		//property "sonar.exclusions", "src/main/java/com/edwinmarrugo/userstohexagonal/infrastructure/**/*"
 	}
 }
