@@ -20,9 +20,6 @@ steps:
       SonarCloud: 'Sonar'
       organization: 'bootcamp-devops-sonar'
       scannerMode: 'Other'
-      extraProperties:
-        sonar.projectKey=edwinmarr_bootcamp-devops
-        sonar.projectName=bootcamp-devops
   - task: Gradle@3
     displayName: 'Building gradle project'
     inputs:
