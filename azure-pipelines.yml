@@ -29,12 +29,6 @@ steps:
       gradleWrapperFile: 'gradlew'
       tasks: 'clean build'
       jdkVersionOption: 1.17
-    
-  - task: Gradle@3
-    displayName: 'Running sonar'
-    inputs:
-      gradleWrapperFile: 'gradlew'
-      tasks: 'sonar'
   - task: SonarCloudAnalyze@1
     displayName: 'Running sonarCLoudAnalyze'
     inputs:
