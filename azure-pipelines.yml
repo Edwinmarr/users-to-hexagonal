@@ -27,12 +27,9 @@ steps:
     displayName: 'Building gradle project'
     inputs:
       gradleWrapperFile: 'gradlew'
-      tasks: 'clean build'
+      tasks: 'clean build sonar'
       jdkVersionOption: 1.17
-  - task: SonarCloudAnalyze@1
-    displayName: 'Running sonarCLoudAnalyze'
-    inputs:
-      jdkversion: 'JAVA_HOME_17_X64'
+      
   - task: SonarCloudPublish@1
     displayName: 'Publishing sonarResults'
     inputs:
