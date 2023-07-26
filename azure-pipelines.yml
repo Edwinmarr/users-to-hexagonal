@@ -5,6 +5,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
+  - main
   - development
 
 pool:
@@ -18,10 +19,7 @@ steps:
       SonarCloud: 'Sonar'
       organization: 'bootcamp-devops-sonar'
       scannerMode: 'Other'
-      extraProperties: |
-        # Additional properties that will be passed to the scanner,
-        # Put one key=value per line, example:
-        # sonar.exclusions=**/*.bin
+      extraProperties:
         sonar.projectKey=edwinmarr_bootcamp-devops
         sonar.projectName=bootcamp-devops
   - task: Gradle@3
