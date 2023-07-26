@@ -49,11 +49,6 @@ test{
 
 sonar{
 	properties{
-		property "sonar.host.url", "https://sonarcloud.io" // URL del servidor de SonarCloud
-		property "sonar.token", "37df362296857c5452bb5a85c600a0470ae9fe20" // Token de acceso generado en SonarCloud
-		property "sonar.projectKey", "edwinmarr_bootcamp-devops" // Clave única de tu proyecto en SonarCloud
-		property "sonar.organization", "bootcamp-devops-sonar" // Nombre de la organización de SonarCloud
-		property "sonar.projectName", "bootcamp-devops"
 		property "sonar.exclusions", "src/main/java/com/edwinmarrugo/userstohexagonal/infrastructure/**/*"
 	}
 }
