@@ -5,9 +5,9 @@ spring:
   port: ${PORT:8080}
 
   datasource:
-    url: ${DATABASE_URL:jdbc:postgresql://database-bootcamp-devops.cunmkxbsc3md.us-east-1.rds.amazonaws.com:5432/postgres}
+    url: ${DATABASE_URL:jdbc:postgresql://endpoint_bd}
     username: ${DATABASE_USERNAME:postgres}
-    password: ${DATABASE_PASSWORD:bootcamp2023-devops}
+    password: ${DATABASE_PASSWORD:12345}
     driver-class-name: ${DATABASE_DRIVER:org.postgresql.Driver}
   jpa:
     database-platform: ${DATABASE_PLATFORM:org.hibernate.dialect.PostgreSQLDialect}
